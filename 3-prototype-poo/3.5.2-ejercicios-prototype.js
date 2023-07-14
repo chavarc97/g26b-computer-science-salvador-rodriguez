@@ -91,5 +91,12 @@ console.log(factorial(5));
  */
 
 const agenda = {
-    contacts: [];
+    contacts: [],
+    addContact(){
+        this.contacts.push();
+    }
 }
+
+agenda.addContact('mariela', 2165546684, 'mari@mari.com');
+
+console.log(agenda.contacts);
