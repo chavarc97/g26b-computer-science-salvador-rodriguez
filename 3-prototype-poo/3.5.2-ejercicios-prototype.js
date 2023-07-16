@@ -89,14 +89,55 @@ console.log(factorial(5));
  * eliminar y buscar contactos. Cada contacto debe 
  * tener un nombre, un email y un teléfono.
  */
-
-const agenda = {
-    contacts: [],
-    addContact(){
-        this.contacts.push();
+class Contact{
+    constructor(name, number, email) {
+        this.name = name;
+        this.number = number;
+        this.email = email;
     }
 }
 
-agenda.addContact('mariela', 2165546684, 'mari@mari.com');
 
-console.log(agenda.contacts);
+class Agenda {
+    constructor() {
+        this.list = [];
+    }
+    //add contacts
+    addContact(contact){
+        this.list.push(contact);
+    }
+    // search method
+    searchContact(name){
+        let contactList = this.list;
+        let contactFounded = null;
+        for (let i = 0; i < contactList.length; i++) {
+            if (name === contactList[i].name) {
+                contactFounded = contactList[i];
+                break;
+            }          
+        }
+        return contactFounded;
+    }
+    // Delete contact
+    delete(contact){
+        this.list.pop(contact);
+    }
+    print(){
+        console.log(this.list);
+    }
+}
+
+let contacts = new Agenda ();
+//Contacts to add
+let alejandra = new Contact('Alejandra', 5252567594, 'alejandra23@gmail.com');
+let roberto = new Contact('roberto', 5264867594, 'roberto_43@gmail.com');
+let arturo = new Contact('Arturo', 6213789134, 'arturo_97@gmail.com');
+let benja = new Contact('Bejamin', 5489132675, 'benjamin_77@gmail.com');
+
+
+contacts.addContact(alejandra);
+contacts.addContact(roberto);
+contacts.addContact(arturo);
+contacts.addContact(benja);
+
+contacts.print()
