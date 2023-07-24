@@ -7,8 +7,14 @@
 
 
 // la funcion debe retornar -1
-busquedaComparacion(){
-
+function busquedaComparacion(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    const element = arr[i];
+    if (target === element) {
+      return i +1;
+    }
+  }
+  return -1 // no se encontro el elemento 
 }
 
 
@@ -17,9 +23,8 @@ busquedaComparacion(){
 
 
 
-
 const arregloBase = [3, 6, 9, 12, 15, 18, 21];
-const elementoBusqueda = 15;
+const elementoBusqueda = 6;
 
 const resultIndex = busquedaComparacion(arregloBase, elementoBusqueda);
 
